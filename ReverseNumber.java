@@ -23,7 +23,7 @@ public class ReverseNumber {
 	}
 	
 	public static void main(String[] args) {
-		long number = 1;
+		long number = -2147447412;
 		ReverseNumber reverseNumber = new ReverseNumber();
 		long reverseN = reverseNumber.reverseNumber(number);
 		System.out.println(reverseN);
