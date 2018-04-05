@@ -1,23 +1,33 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class FindWords {
-   // public String[] findWords(String[] words) {
-        //String firstLine = "QWERTYUIOP", secondLine = "ASDFGHJKL", thirdLine = "ZXCVBNM";
-        //String[] word = new String[]{"QWERTYUIOP", "ASDFGHJKL", "ZXCVBNM"};
-//        char[] row1 = new char[]{'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'};
-//        char[] row2 = new char[]{'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'};
-//        char[] row3 = new char[]{'z', 'x', 'c', 'v', 'b', 'n', 'm'};
-//        String[] wordList = null;
-//        //int wordsLen = words.length, wordLen = word.length;
-//        for (String word : words) {
-//            int one = 0, two = 0, three = 0;
-//            for (char c : word.toCharArray()) {
-//                if (row1.)
-//            }
-//        }
-//        return wordList;
-   // }
+    public String[] findWords(String[] words) {
+        String[] Str = {"QWERTYUIOP","ASDFGHJKL","ZXCVBNM"};
+        Map<Character,Integer> map = new HashMap<>();
+        for(int i=0; i<Str.length; i++) {
+            for(char c : Str[i].toCharArray()) {
+                map.put(c, i);
+            }
+         }
+        int index = 0;
+        List<String> res = new ArrayList<>();
+        for(String word : words) {
+            if (word.equals("")) {
+                continue;
+            }
+            index = map.get(word.toUpperCase().toCharArray()[0]);
+            for(char c : word.toUpperCase().toCharArray()) {
+                if(map.get(c) != index) {
+                    index = -1;//不用设置flag 直接把index设为-1即可
+                    break;
+                }
+            }
+            if(index != -1) {
+                res.add(word);
+            }
+        }
+        return res.toArray(new String[res.size()]);
+    }
 
 //    public boolean isValid(String words) {
 //        String[] word = new String[]{"QWERTYUIOP", "ASDFGHJKL", "ZXCVBNM"};
@@ -36,6 +46,9 @@ public class FindWords {
 //    }
 
     public static void main(String[] args) {
-
+        FindWords findWords = new FindWords();
+        String[] words = new String[]{"Hello", "Alaska", "Dad", "Peace"};
+        String[] list = findWords.findWords(words);
+        System.out.println(Arrays.toString(list));
     }
 }
