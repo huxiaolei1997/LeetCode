@@ -15,8 +15,11 @@ public class FindWords {
             if (word.equals("")) {
                 continue;
             }
+            // 这里表示这个单词的第一个字母所在的行数，如果这个单词能被某一键盘行打出来，那么这个第一个字符
+            // 所在的键盘行数就是整个单词的键盘行数
             index = map.get(word.toUpperCase().toCharArray()[0]);
             for(char c : word.toUpperCase().toCharArray()) {
+                System.out.println("index = " + index);
                 if(map.get(c) != index) {
                     index = -1;//不用设置flag 直接把index设为-1即可
                     break;
