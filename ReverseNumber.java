@@ -1,5 +1,3 @@
-package leet_code;
-
 public class ReverseNumber {
 	// 颠倒数字
 	public int reverseNumber(long x) {

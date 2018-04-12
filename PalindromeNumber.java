@@ -1,5 +1,3 @@
-package leet_code;
-
 public class PalindromeNumber {
     // 判断是否是回文数
     public boolean isPalindromeNumber(long x) {
