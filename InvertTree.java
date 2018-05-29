@@ -1,8 +1,7 @@
 public class InvertTree {
 
     /**
-     * 翻转一棵二叉树。
-     *
+     * 翻转一棵二叉树
      * @param root
      * @return https://leetcode-cn.com/problems/invert-binary-tree/description/
      */
