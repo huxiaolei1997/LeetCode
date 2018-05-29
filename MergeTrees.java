@@ -1,5 +1,3 @@
-import com.sun.scenario.effect.Merge;
-
 public class MergeTrees {
     /**
      * Definition for a binary tree node.
